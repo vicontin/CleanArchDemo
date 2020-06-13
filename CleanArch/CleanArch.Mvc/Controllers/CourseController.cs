@@ -2,6 +2,7 @@
 using CleanArch.Application.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace CleanArch.Mvc.Controllers
 {
@@ -16,7 +17,7 @@ namespace CleanArch.Mvc.Controllers
 
         public IActionResult Index()
         {
-            CourseViewModel model = _courseService.GetCourses();
+            IEnumerable<CourseViewModel> model = _courseService.GetCourses();
 
             return View(model);
         }
