@@ -2,6 +2,7 @@
 using CleanArch.Domain.Models;
 using CleanArch.Infra.Data.Context;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CleanArch.Infra.Data.Repository
 {
@@ -20,7 +21,7 @@ namespace CleanArch.Infra.Data.Repository
             _ctx.SaveChanges();
         }
 
-        public IEnumerable<Course> GetCourses()
+        public IQueryable<Course> GetCourses()
         {
             return _ctx.Courses;
         }
